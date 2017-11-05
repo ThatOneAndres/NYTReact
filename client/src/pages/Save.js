@@ -9,14 +9,25 @@ class Save extends Component {
         saved: []
     };
 
-    handleFormSubmit = event => {
+
+    componentDidMount(){
+        API.getSaved()
+        .then(res => {
+            console.log(res);
+            this.state.saved = res.data;
+        })
+        .catch(err => this.setState({ error: err.message }));
+    }
+
+    handleSaveSumbit = event => {
         event.preventDefault();
-        API.getArticles(this.state.search, this.state.start, this.state.end)
+        console.log(event);
+        API.postSaved(headline, url)
           .then(res => {
             if (res.data.status === "error") {
               throw new Error(res.data.message);
             }
-            this.setState({ results: res.data.message, error: "" });
+            console.log(success);
           })
           .catch(err => this.setState({ error: err.message }));
       };
@@ -24,7 +35,7 @@ class Save extends Component {
     render() {
         return (
             <div>
-              <SavedArticles results = {this.state.results}/>
+              <SavedArticles results = {this.state.saved}/>
             </div>
         );
     }

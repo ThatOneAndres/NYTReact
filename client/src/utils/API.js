@@ -9,5 +9,11 @@ export default {
     url += '?' + 'api-key=' + apiKey + '&q=' + input + '&begin_date=' + startYear + '0101&end_date=' + endYear+"0101";
     console.log(url);
     return axios.get(url);
+  },
+  getSaved: function(){
+    return axios.get("/saved");
+  },
+  postSaved: function(article){
+    return axios.post("/saved");
   }
 };
