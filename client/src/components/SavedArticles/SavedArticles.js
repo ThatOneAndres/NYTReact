@@ -1,8 +1,8 @@
 import React from "react";
 //import "./SearchResults.css";
 
-const SearchResults = props =>
-  <ul className="list-group search-results">
+const SavedArticles = props =>
+  <ul className="list-group saved-articles">
     {props.results.map(result =>
       <li key={result.web_url} className="list-group-item">
         <h3>
@@ -11,11 +11,11 @@ const SearchResults = props =>
                 <a href = {result.web_url} rel = "noopener noreffer" target = "_blank">
                     View Article
                 </a>
-                <button className = "btn btn-primary save"> Save </button>
+                <button className = "btn btn-primary delete"> Delete </button>
             </span>
         </h3>
       </li>
     )}
   </ul>;
 
-export default SearchResults;
+export default SavedArticles;

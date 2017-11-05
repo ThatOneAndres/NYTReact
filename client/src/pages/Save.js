@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import Container from "../components/Container";
-import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults";
+import SavedArticles from "../components/SavedArticles";
 
 
-class Search extends Component {
+class Save extends Component {
     state = {
-        search: "",
-        start: "",
-        end: "",
-        results: []
-    };
-
-    handleInputChange = event => {
-        this.setState({ search: event.target.value });
+        saved: []
     };
 
     handleFormSubmit = event => {
@@ -32,11 +24,7 @@ class Search extends Component {
     render() {
         return (
             <div>
-              <SearchForm
-                handleInputChange = {this.handleInputChange}
-                handleFormSubmit = {this.handleFormSubmit}
-              />
-              <SearchResults results = {this.state.results}/>
+              <SavedArticles results = {this.state.results}/>
             </div>
         );
     }
