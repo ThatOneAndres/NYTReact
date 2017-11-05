@@ -19,23 +19,23 @@ class Save extends Component {
         .catch(err => this.setState({ error: err.message }));
     }
 
-    handleSaveSumbit = event => {
+    handleDelete = event => {
         event.preventDefault();
         console.log(event);
-        API.postSaved(headline, url)
-          .then(res => {
-            if (res.data.status === "error") {
-              throw new Error(res.data.message);
-            }
-            console.log(success);
-          })
-          .catch(err => this.setState({ error: err.message }));
+        // API.postSaved(headline, url)
+        //   .then(res => {
+        //     if (res.data.status === "error") {
+        //       throw new Error(res.data.message);
+        //     }
+        //     console.log(success);
+        //   })
+        //   .catch(err => this.setState({ error: err.message }));
       };
 
     render() {
         return (
             <div>
-              <SavedArticles results = {this.state.saved}/>
+              <SavedArticles handleDelete = {this.handleDelete} results = {this.state.saved}/>
             </div>
         );
     }

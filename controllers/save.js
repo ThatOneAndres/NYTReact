@@ -15,5 +15,13 @@ module.exports = {
         .then(function(dbSave){
             res.json(dbSave);
         });
+    },
+
+    create: function(req, res){
+        db.Save
+          .create(req.body)
+          .then(function(dbSave){
+              res.json(dbSave)
+          });
     }
-}
+};

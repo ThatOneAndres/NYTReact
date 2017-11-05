@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Create a saveSchema
-var saveSchema = new Schame({
+var saveSchema = new Schema({
     headline:{
         type: String,
         required: true,

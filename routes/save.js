@@ -5,4 +5,4 @@ router.get("/", saveController.findAll);
 router.delete("/:id", saveController.delete);
 router.post("/", saveController.create);
 
-modeule.exports = router;
+module.exports = router;

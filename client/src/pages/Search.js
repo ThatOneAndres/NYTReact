@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 
@@ -14,19 +13,37 @@ class Search extends Component {
     };
 
     handleInputChange = event => {
-        this.setState({ search: event.target.value });
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
         API.getArticles(this.state.search, this.state.start, this.state.end)
           .then(res => {
-            if (res.data.status === "error") {
-              throw new Error(res.data.message);
+            console.log("------");
+            console.log(res.data.response.docs)
+            if (res.data.response.status === "error") {
+              throw new Error(res.message);
             }
-            this.setState({ results: res.data.message, error: "" });
+            this.setState({ results: res.data.response.docs, error: "" });
           })
           .catch(err => this.setState({ error: err.message }));
+      };
+
+      handleSaveSubmit = event => {
+        event.preventDefault();
+        console.log($(event));
+        // API.postSaved(headline, url)
+        //   .then(res => {
+        //     if (res.data.status === "error") {
+        //       throw new Error(res.data.message);
+        //     }
+        //     console.log(success);
+        //   })
+        //   .catch(err => this.setState({ error: err.message }));
       };
 
     render() {
@@ -35,8 +52,9 @@ class Search extends Component {
               <SearchForm
                 handleInputChange = {this.handleInputChange}
                 handleFormSubmit = {this.handleFormSubmit}
+                state = {this.state}
               />
-              <SearchResults results = {this.state.results}/>
+              <SearchResults handleSaveSubmit = {this.handleSaveSubmit} results = {this.state.results}/>
             </div>
         );
     }

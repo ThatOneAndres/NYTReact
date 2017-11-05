@@ -11,7 +11,7 @@ const SearchResults = props =>
                 <a href = {result.web_url} rel = "noopener noreffer" target = "_blank">
                     View Article
                 </a>
-                <button className = "btn btn-primary save"> Save </button>
+                <button onClick = {props.handleSaveSubmit} className = "btn btn-primary save"> Save </button>
             </span>
         </h3>
       </li>
