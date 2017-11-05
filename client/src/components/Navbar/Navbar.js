@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+//import "./Navbar.css";
 
 
 const Navbar = props =>
@@ -17,8 +17,8 @@ const Navbar = props =>
             NYT-React
           </Link>
       </div>
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav navbar-right">
+      <div className="collapse navbar-collapse navbar-ex1-collapse">
+          <ul className="nav navbar-nav navbar-right">
               <li>
                   <Link to="/search">
                     Search

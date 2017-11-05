@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Jumbotron.css";
+//import { Link } from "react-router-dom";
+//import "./Jumbotron.css";
 
 const Jumbotron = () =>
   <div className = "jumbotron">
@@ -13,3 +13,5 @@ const Jumbotron = () =>
         Search for and save articles of interest.
       </h3>
   </div>
+
+export default Jumbotron;

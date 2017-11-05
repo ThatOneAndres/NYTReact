@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchForm.css";
+//import "./SearchForm.css";
 
 const SearchForm = props =>
   <div className = "main-container">
@@ -17,11 +17,11 @@ const SearchForm = props =>
                 <form>
                     <div className = "form-group">
                         <h4> <strong> Title </strong> </h4>
-                        <input onChange = {props.handleInputChange} type = "number" value className = "form-control" id = "start" required/>
+                        <input name = "search" onChange = {props.handleInputChange} type = "text" value={props.state.search} className = "form-control" id = "search" required/>
                         <h4> <strong> Start Year </strong> </h4>
-                        <input onChange = {props.handleInputChange} type = "number" value className = "form-control" id = "start" required/>
+                        <input name ="start" onChange = {props.handleInputChange} type = "number" value={props.state.start} className = "form-control" id = "start" required/>
                         <h4> <strong> End Year </strong> </h4>
-                        <input onChange = {props.handleInputChange} type = "number" value className = "form-control" id = "end" required/>
+                        <input name = "end" onChange = {props.handleInputChange} type = "number" value={props.state.end} className = "form-control" id = "end" required/>
                     </div>
                 </form>
                 <div className = "pull-right">
