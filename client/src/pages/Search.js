@@ -23,8 +23,6 @@ class Search extends Component {
         event.preventDefault();
         API.getArticles(this.state.search, this.state.start, this.state.end)
           .then(res => {
-            console.log("------");
-            console.log(res.data.response.docs)
             if (res.data.response.status === "error") {
               throw new Error(res.message);
             }
@@ -35,14 +33,11 @@ class Search extends Component {
 
       handleSaveSubmit = (headline, url) => {
         //event.preventDefault();
-        console.log(headline, url);
         API.postSaved({"headline": headline,"url": url})
           .then(res => {
-            console.log(res);
             if (res.data.status === "error") {
               throw new Error(res.data.message);
             }
-            console.log("success");
           })
           .catch(err => this.setState({ error: err.message }));
       };

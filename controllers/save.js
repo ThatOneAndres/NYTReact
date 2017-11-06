@@ -18,8 +18,6 @@ module.exports = {
     },
 
     create: function(req, res){
-        console.log("controller")
-        console.log(req.body);
         db.Save
           .create(req.body)
           .then(function(dbSave){

@@ -20,7 +20,7 @@ const Navbar = props =>
       <div className="collapse navbar-collapse navbar-ex1-collapse">
           <ul className="nav navbar-nav navbar-right">
               <li>
-                  <Link to="/search">
+                  <Link to="/">
                     Search
                   </Link>
               </li>
