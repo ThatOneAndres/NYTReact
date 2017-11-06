@@ -11,13 +11,13 @@ export default {
     return axios.get(url);
   },
   getSaved: function(){
-    return axios.get("/api/saved");
+    return axios.get("/api/save");
   },
   postSaved: function(article){
     console.log(article);
-    return axios.post("/api/saved", article);
+    return axios.post("/api/save", article);
   },
   deleteSaved: function(url){
-      return axios.delete("/api/saved", url);
+      return axios.delete("/api/save", url);
   }
 };

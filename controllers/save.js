@@ -18,11 +18,15 @@ module.exports = {
     },
 
     create: function(req, res){
+        console.log("controller")
         console.log(req.body);
         db.Save
           .create(req.body)
           .then(function(dbSave){
               res.json(dbSave)
+          })
+          .catch(function(err){
+            if (err) throw err;  
           });
     }
 };
