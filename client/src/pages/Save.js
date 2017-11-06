@@ -18,7 +18,7 @@ class Save extends Component {
             console.log(res);
             this.state.saved = res.data;
         })
-        .catch(err => this.setState({ error: err.message })))}
+        .catch(err => this.setState({ error: err.message }))});
     }
 
     handleDelete = url => {
