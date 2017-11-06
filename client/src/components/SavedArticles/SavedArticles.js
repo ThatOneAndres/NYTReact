@@ -11,7 +11,7 @@ const SavedArticles = props =>
                 <a href = {result.web_url} rel = "noopener noreffer" target = "_blank">
                     View Article
                 </a>
-                <button onClick = {props.handleDelete} className = "btn btn-primary delete"> Delete </button>
+                <button onClick = {() => props.handleDelete(result.url)} className = "btn btn-primary delete"> Delete </button>
             </span>
         </h3>
       </li>

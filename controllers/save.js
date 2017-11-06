@@ -18,6 +18,7 @@ module.exports = {
     },
 
     create: function(req, res){
+        console.log(req.body);
         db.Save
           .create(req.body)
           .then(function(dbSave){

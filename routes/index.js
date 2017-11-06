@@ -1,6 +1,6 @@
 var router = require("express").Router();
 var saveRoutes = require("./save");
 
-router.use("/save", saveRoutes);
+router.use("/api/save", saveRoutes);
 
 module.exports = router;

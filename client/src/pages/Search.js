@@ -33,17 +33,18 @@ class Search extends Component {
           .catch(err => this.setState({ error: err.message }));
       };
 
-      handleSaveSubmit = event => {
-        event.preventDefault();
-        console.log($(event));
-        // API.postSaved(headline, url)
-        //   .then(res => {
-        //     if (res.data.status === "error") {
-        //       throw new Error(res.data.message);
-        //     }
-        //     console.log(success);
-        //   })
-        //   .catch(err => this.setState({ error: err.message }));
+      handleSaveSubmit = (headline, url) => {
+        //event.preventDefault();
+        console.log(headline, url);
+        API.postSaved({"headline": headline,"url": url})
+          .then(res => {
+            console.log(res);
+            if (res.data.status === "error") {
+              throw new Error(res.data.message);
+            }
+            console.log("success");
+          })
+          .catch(err => this.setState({ error: err.message }));
       };
 
     render() {
