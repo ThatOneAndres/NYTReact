@@ -20,11 +20,11 @@ app.use(bodyParser.json());
 app.use(routes);
 
 
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// // Send every request to the React app
+// // Define any API routes before this runs
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 
 // If deployed, use the deployed database. Otherwise use the local mongoNYT database
